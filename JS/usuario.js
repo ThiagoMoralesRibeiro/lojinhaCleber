@@ -62,7 +62,7 @@ $(document).on('click', "#btn-confirma", function () {
 	
   // criando as variáveis
   var vUrl = "usuarios.php";
-  var vData = { email: email, nome: nome , senha : pwd , cpf : cpf , nameAdress : adress , bairro : bairro , cidade : cidade, uf : uf , cep : cep , telefone : telefone , foto : foto  };
+  var vData = { email: email, nome: nome , senha : pwd , cpf : cpf , adress : adress , bairro : bairro , cidade : cidade, uf : uf , cep : cep , telefone : telefone , foto : foto  };
  
   $.post(
    vUrl, //Required URL of the page on server
@@ -80,7 +80,7 @@ $(document).on('click', "#btn-confirma", function () {
             "Email:"+obj.email + "<br>"+
             "Senha:"+obj.senha + "<br>"+
             "CPF:"+obj.cpf + "<br>"+
-            "Endereço:"+obj.nameAdress + "<br>"+
+            "Endereço:"+obj.adress + "<br>"+
             "Bairro:"+obj.bairro + "<br>"+
             "Cidade:"+obj.cidade + "<br>"+
             "UF:"+obj.uf + "<br>"+
