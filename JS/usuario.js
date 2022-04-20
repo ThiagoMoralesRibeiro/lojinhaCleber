@@ -62,10 +62,10 @@ $(document).on('click', "#btn-confirma", function () {
 	
   // criando as variáveis
   var vUrl = "usuarios.php";
-  var vData = { email: email, nome: nome , senha : pwd , cpf : cpf , adress : adress , bairro : bairro , cidade : cidade, uf : uf , cep : cep , telefone : telefone , foto : foto  };
+  var vData = { "email": email, "nome": nome , "senha" : pwd , "cpf" : cpf , "adress" : adress , "bairro" : bairro , "cidade" : cidade, "uf" : uf , "cep" : cep , "telefone" : telefone , "foto" : foto  };
  
   $.post(
-   vUrl, //Required URL of the page on server
+   vUrl, //variável correspondente a meu arquivo php
    vData,
    function(response,status)
    {
