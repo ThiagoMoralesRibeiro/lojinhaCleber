@@ -1,5 +1,5 @@
 <?php
-class DBConnection {
+class DataBaseConnection {
     private $host ="";
     private $dbName="";
     private $passwd="";
@@ -13,8 +13,7 @@ class DBConnection {
         $this->setDbName("lojinha");
         $this->setPasswd("12345");
         $this->setUser("root");
-        $this->setPort("3306");
-        $this->setConn(mysqli_connect($this->getHost(), $this->getUser(), $this->getPasswd(), $this->getDbName(), $this->getPort()));
+        $this->setConn(mysqli_connect($this->getHost(), $this->getUser(), $this->getPasswd(), $this->getDbName()));
         
        
         
@@ -22,6 +21,8 @@ class DBConnection {
             echo "Ocorreu um erro e o Número do erro é ". mysqli_connect_errno(). mysqli_connect_error();
             exit();
         }
+        
+        
     }
     
     
