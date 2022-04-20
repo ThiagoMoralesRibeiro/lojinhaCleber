@@ -70,7 +70,7 @@ $(document).on('click', "#btn-confirma", function () {
    function(response,status)
    {
      // tratando o status de retorno. Sucesso significa que o envio e retorno foi executado com sucesso.
-     if(status == "success")
+     if(status == true)
      {
         // pegando os dados jSON
         var obj = jQuery.parseJSON(response);
