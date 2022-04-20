@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $( "#btn-confirm").onclick(function (e) { 
+    $("#btn-confirm").onclick(function () { 
         nome = $("#name").val()
         email = $("#email").val()
         pwd = $("#pwd").val()
