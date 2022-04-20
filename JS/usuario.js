@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
     $("#btn-confirm").onclick(function () { 
         nome = $("#name").val()
         email = $("#email").val()
@@ -42,7 +42,7 @@ $(document).ready(function () {
 });
 
 
-
+*/
 
 
 $(document).on('click', "#btn-confirma", function () {
