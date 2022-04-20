@@ -16,13 +16,13 @@ $foto=$_REQUEST['foto'];
 
 $user = new Usuarios($email, $senha, $nome, $cpf, $endereco, $bairro, $cidade, $uf, $cep, $telefone, $foto);
 
-/*echo json_encode(
+echo json_encode(
     array(
         "email" => $email,
         "nome" => $nome,
         "senha"=> $senha,
         "cpf"=>$cpf,
-        "nameAdress"=>$endereco,
+        "adress"=>$endereco,
         "bairro"=>$bairro,
         "cidade"=>$cidade,
         "uf"=>$uf,
@@ -30,7 +30,7 @@ $user = new Usuarios($email, $senha, $nome, $cpf, $endereco, $bairro, $cidade, $
         "telefone"=>$telefone,
         "foto"=>$foto
     )
-); */
+); 
 
 
 ?>
