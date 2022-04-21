@@ -48,35 +48,37 @@
 $(document).on('click', "#btn-confirma", function () {
 	
   // pegando os dados
-        nome = $("#name").val()
-        email = $("#email").val()
-        pwd = $("#pwd").val()
-        cpf = $("#cpf").val()
-        adress = $("#adress").val()
-        bairro = $("#bairro").val()
-        cidade = $("#cidade").val()
-        uf = $("#uf").val()
-        cep = $("#cep").val()
-        telefone = $("#telefone").val()
-        foto = $("#foto").val()
-
-        
+        nome = $("#name").val();
+        email = $("#email").val();
+        pwd = $("#pwd").val();
+        cpf = $("#cpf").val();
+        adress = $("#adress").val();
+        bairro = $("#bairro").val();
+        cidade = $("#cidade").val();
+        uf = $("#uf").val();
+        cep = $("#cep").val();
+        telefone = $("#telefone").val();
+        foto = $("#foto").val();
 	
+
   // criando as variáveis
   var vUrl = "usuarios.php";
-  var vData = { "email": email, "nome": nome , "senha" : pwd , "cpf" : cpf , "adress" : adress , "bairro" : bairro , "cidade" : cidade, "uf" : uf , "cep" : cep , "telefone" : telefone , "foto" : foto  };
+  var vData =  {email: email, /*nome: nome , senha : pwd , cpf : cpf , adress : adress , bairro : bairro , cidade : cidade, uf : uf , cep : cep , telefone : telefone , foto : foto*/  };
  
-  $.post( vUrl, /*variável correspondente a meu arquivo php*/ {
-      vData
-    },
+  alert(vUrl);
+  alert(vData["email"]);
+
+  $.post( vUrl, /*variável correspondente a meu arquivo php*/ 
+      vData,
+    
    
-   function (response,status)
+   function (vData,status)
    {
      // tratando o status de retorno. Sucesso significa que o envio e retorno foi executado com sucesso.
      if(status == "success")
      {
         // pegando os dados jSON
-        var obj = jQuery.parseJSON(response);
+        var obj = jQuery.parseJSON(vData);
         console.log(obj)
        $("#result").html(
             "Nome:" +obj.nome + "<br>" +
@@ -95,3 +97,11 @@ $(document).on('click', "#btn-confirma", function () {
    }
   );
 });
+
+
+$.post(vUrl, vData,
+    function (vData, textStatus, response) {
+        
+    },
+    "dataType"
+);
