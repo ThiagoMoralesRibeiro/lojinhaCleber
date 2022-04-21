@@ -59,6 +59,8 @@ $(document).on('click', "#btn-confirma", function () {
         cep = $("#cep").val()
         telefone = $("#telefone").val()
         foto = $("#foto").val()
+
+        alert(nome);
 	
   // criando as variáveis
   var vUrl = "usuarios.php";
