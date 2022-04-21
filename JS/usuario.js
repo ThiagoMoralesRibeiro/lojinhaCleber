@@ -84,8 +84,8 @@ $(document).on('click', "#btn-confirma", function () {
             "Cidade:"+obj.cidade + "<br>"+
             "UF:"+obj.uf + "<br>"+
             "CEP:"+obj.email + "<br>"+
-            "Telefone"+obj.telefone+ "<br>"+
-            "Foto"+obj.foto
+            "Telefone:"+obj.telefone+ "<br>"+
+            "Foto:"+obj.foto
        );
     }    	
    
