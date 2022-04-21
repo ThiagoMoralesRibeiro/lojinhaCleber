@@ -16,7 +16,7 @@ $foto=$_REQUEST['foto'];
 
 $user = new Usuarios($email, $senha, $nome, $cpf, $endereco, $bairro, $cidade, $uf, $cep, $telefone, $foto);
 
-echo json_encode(
+ json_encode(
     array(
         "email" => $email,
         "nome" => $nome,
