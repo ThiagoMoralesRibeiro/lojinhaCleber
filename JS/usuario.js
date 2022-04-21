@@ -74,7 +74,7 @@ $(document).on('click', "#btn-confirma", function () {
         // pegando os dados jSON
         var obj = jQuery.parseJSON(response);
  
-       $("#result").show(
+       $("#result").html(
             "Nome:" +obj.nome + "<br>" +
             "Email:"+obj.email + "<br>"+
             "Senha:"+obj.senha + "<br>"+
