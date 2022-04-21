@@ -60,7 +60,7 @@ $(document).on('click', "#btn-confirma", function () {
         telefone = $("#telefone").val()
         foto = $("#foto").val()
 
-        alert(nome);
+        
 	
   // criando as variáveis
   var vUrl = "usuarios.php";
@@ -76,7 +76,7 @@ $(document).on('click', "#btn-confirma", function () {
      {
         // pegando os dados jSON
         var obj = jQuery.parseJSON(response);
- 
+        alert(obj)
        $("#result").html(
             "Nome:" +obj.nome + "<br>" +
             "Email:"+obj.email + "<br>"+
