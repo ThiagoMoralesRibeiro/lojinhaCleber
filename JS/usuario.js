@@ -60,7 +60,7 @@ $(document).on('click', "#btn-confirma", function () {
         telefone = $("#telefone").val()
         foto = $("#foto").val()
 
-        alert(nome);
+        
 	
   // criando as variáveis
   var vUrl = "usuarios.php";
