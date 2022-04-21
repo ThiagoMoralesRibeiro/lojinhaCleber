@@ -62,15 +62,16 @@ $(document).on('click', "#btn-confirma", function () {
 	
   // criando as variáveis
   var vUrl = "usuarios.php";
-  var vData = { email: email, nome: nome , senha : pwd , cpf : cpf , adress : adress , bairro : bairro , cidade : cidade, uf : uf , cep : cep , telefone : telefone , foto : foto  };
+  var vData = { "email": email, "nome": nome , "senha" : pwd , "cpf" : cpf , "adress" : adress , "bairro" : bairro , "cidade" : cidade, "uf" : uf , "cep" : cep , "telefone" : telefone , "foto" : foto  };
  
   $.post(
    vUrl, //variável correspondente a meu arquivo php
    vData,
-   function(response)
+   function(response,status)
    {
-        // tratando o status de retorno. Sucesso significa que o envio e retorno foi executado com sucesso.
-     
+     // tratando o status de retorno. Sucesso significa que o envio e retorno foi executado com sucesso.
+     if(status == "success")
+     {
         // pegando os dados jSON
         var obj = jQuery.parseJSON(response);
  
@@ -84,10 +85,10 @@ $(document).on('click', "#btn-confirma", function () {
             "Cidade:"+obj.cidade + "<br>"+
             "UF:"+obj.uf + "<br>"+
             "CEP:"+obj.email + "<br>"+
-            "Telefone:"+obj.telefone+ "<br>"+
-            "Foto:"+obj.foto
+            "Telefone"+obj.telefone+ "<br>"+
+            "Foto"+obj.foto
        );
-    }    	
-   
+     }    	
+   }
   );
 });
