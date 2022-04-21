@@ -60,21 +60,16 @@ $(document).on('click', "#btn-confirma", function () {
         telefone = $("#telefone").val();
         foto = $("#foto").val();
 
-       
-
         
 	
   // criando as variáveis
   var vUrl = "usuarios.php";
   var vData = { email: email, nome: nome , senha : pwd , cpf : cpf , adress : adress , bairro : bairro , cidade : cidade, uf : uf , cep : cep , telefone : telefone , foto : foto  };
  
-  alert(vUrl);
-  alert(vData);
-
-  $.post( vUrl, /*variável correspondente a meu arquivo php*/ 
-      vData,
-    
-   
+  $.post(
+      
+   vUrl, //variável correspondente a meu arquivo php
+   vData,
    function (response,status)
    {
      // tratando o status de retorno. Sucesso significa que o envio e retorno foi executado com sucesso.
@@ -82,7 +77,7 @@ $(document).on('click', "#btn-confirma", function () {
      {
         // pegando os dados jSON
         var obj = jQuery.parseJSON(response);
-        console.log(obj)
+        
        $("#result").html(
             "Nome:" +obj.nome + "<br>" +
             "Email:"+obj.email + "<br>"+
