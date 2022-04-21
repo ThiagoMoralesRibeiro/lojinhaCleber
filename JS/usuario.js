@@ -67,7 +67,7 @@ $(document).on('click', "#btn-confirma", function () {
   $.post(
    vUrl, //variável correspondente a meu arquivo php
    vData,
-   function(response, status)
+   function(response)
    {
         // tratando o status de retorno. Sucesso significa que o envio e retorno foi executado com sucesso.
      
