@@ -28,7 +28,7 @@ class Categoria {
 
     public function save() {
         $insert = new DataBaseConnection();
-        $insert->getConn()->query(("INSERT INTO categoria (descricao) VALUES ('".$this->getDescricao()."')"));
+        $insert->getConn()->query(("INSERT INTO categorias (descricao) VALUES ('".$this->getDescricao()."')"));
     }
 
 }
