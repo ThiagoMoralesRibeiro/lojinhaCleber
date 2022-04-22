@@ -13,6 +13,6 @@
     $qtdOcorrencia=$_POST['qtdOcorrencia']; 
     $ocorrencia=$_POST['Ocor']; 
 
-    $itemsPedido = new Estoque($dtEntrada, $quantidade, $dtFabricacao, $dtVencimento, $nfCompra, $precoCompra, $icmsCompra, $precoVenda, $qtdVendida, $qtdOcorrencia, $ocorrencia);
+    $estoque = new Estoque($dtEntrada, $quantidade, $dtFabricacao, $dtVencimento, $nfCompra, $precoCompra, $icmsCompra, $precoVenda, $qtdVendida, $qtdOcorrencia, $ocorrencia);
 
 ?>

@@ -1,11 +1,13 @@
 <?php
+include_once 'dataBaseConnection.class.php';
 class Categoria {
     private $idcategoria="";
     private $descricao="";
     
-    function __construct($idcategoria, $descricao) {
-        $this->setIdcategoria($idcategoria);
+    function __construct( $descricao) {
+        
         $this->setDescricao($descricao);
+        $this->save();
     }
 
     public function getIdcategoria(){
@@ -22,6 +24,11 @@ class Categoria {
 
     public function setDescricao($descricao){
         $this->descricao = $descricao;
+    }
+
+    public function save() {
+        $insert = new DataBaseConnection();
+        $insert->getConn()->query(("INSERT INTO categoria (descricao) VALUES ('".$this->getDescricao()."')"));
     }
 
 }
