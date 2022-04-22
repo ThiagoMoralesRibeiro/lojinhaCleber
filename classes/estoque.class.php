@@ -1,4 +1,6 @@
 <?php
+
+include_once 'dataBaseConnection.class.php';
 class Estoque {
     private $idEstoque;
     private $idProduto;
@@ -15,9 +17,7 @@ class Estoque {
     private $ocorrencia;
     
     
-    function __construct($idEstoque, $idProduto, $dtEntrada, $quantidade, $dtFabricacao, $dtVencimento, $nfCompra, $precoCompra, $icmsCompra, $precoVenda, $qtdVendida, $qtdOcorrencia, $ocorrencia) {
-        $this->setIdEstoque($idEstoque);
-        $this->setIdProduto($idProduto);
+    function __construct( $dtEntrada, $quantidade, $dtFabricacao, $dtVencimento, $nfCompra, $precoCompra, $icmsCompra, $precoVenda, $qtdVendida, $qtdOcorrencia, $ocorrencia) {
         $this->setDtEntrada($dtEntrada);
         $this->setQuantidade($quantidade);
         $this->setDtFabricacao($dtFabricacao);
@@ -28,6 +28,7 @@ class Estoque {
         $this->setQtdVendida($qtdVendida);
         $this->setQtdOcorrencia($qtdOcorrencia);
         $this->setOcorrencia($ocorrencia);
+        $this->saveQuery();
     }
 
     public function getIdEstoque(){
@@ -132,6 +133,11 @@ class Estoque {
 
     public function setOcorrencia($ocorrencia){
         $this->ocorrencia = $ocorrencia;
+    }
+
+    public function saveQuery() {
+        $insert = new DataBaseConnection();
+        $insert->getConn()->query(("INSERT INTO estoque (dEstoque,	dtEntradaquantidade,	dtFabricacaodtVencimento,	nfCompra,	precoCompra,	icmsCompra,	precoVenda,	qtdVendida,	qtdOcorrencia,	ocorrencia	) VALUES ('".$this->getDtEntrada()."',  '".$this->getQuantidade()."', '".$this->getDtFabricacao()."','".$this->getDtVencimento()."','".$this->getNfCompra()."', '".$this->getPrecocompra()."', '".$this->getIcmsCompra()."', '".$this->getPrecoVenda()."', '".$this->getQtdVendida()."','".$this->getQtdOcorrencia()."', '".$this->getOcorrencia()."')"));
     }
 
 }
