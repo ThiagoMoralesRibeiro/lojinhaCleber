@@ -1,6 +1,6 @@
 <?php
 
-include 'pedidos.class.php';
+require_once '../pedidos.class.php';
 
 $dtPedido =$_POST['dtpedido'];
 $dtPagamento=$_POST['dtpagl'];
@@ -28,10 +28,3 @@ $pedidos = new Pedidos($dtPedido,$dtPagamento,$dtNotaFiscal,$notaFiscal,$dtEnvio
 
 ?>
 
-
-
-
-
-
-
-?>
