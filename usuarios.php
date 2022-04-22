@@ -20,14 +20,14 @@ $consultaUsuarios =new DataBaseConnection();
 $resultSelect =$consultaUsuarios->getConn()->query("SELECT * FROM usuarios");
 
 while($line = mysqli_fetch_assoc($resultSelect)){
-    echo  $line['nome'] . "<br>";
-    echo  $line['email'] . "<br>";
-    echo  $line['cpf'] . "<br>";
-    echo  $line['endereco'] . "<br>";
-    echo  $line['bairro'] . "<br>";
-    echo  $line['cidade'] . "<br>";
-    echo  $line['uf'] . "<br>";
-    echo  $line['telefone'] . "<br>";
+    echo  "<br>". "Nome: ".$line['nome'] . "<br>";
+    echo   "Email: ".$line['email'] . "<br>";
+    echo  "CPF: ".$line['cpf'] . "<br>";
+    echo  "Endereço: ".$line['endereco'] . "<br>";
+    echo  "Bairro: ".$line['bairro'] . "<br>";
+    echo  "Cidade: ".$line['cidade'] . "<br>";
+    echo  "UF: ".$line['uf'] . "<br>";
+    echo  "Telefone: ".$line['telefone'] . "<br>";
 }
 /*echo json_encode(
     array(

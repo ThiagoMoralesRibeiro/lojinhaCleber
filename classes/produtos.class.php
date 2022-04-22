@@ -31,6 +31,7 @@ class Produtos {
         $this->setProfundidade($profundidade);
         $this->setPeso($peso);
         $this->setCor($cor);
+        $this->saveQuery();
         
     }
 
@@ -136,6 +137,11 @@ class Produtos {
 
     public function setCor($cor){
         $this->cor = $cor;
+    }
+
+    public function saveQuery() {
+        $insert = new DataBaseConnection();
+        $insert->getConn()->query(("INSERT INTO produtos (fabricante, nome, marca, modelo, descricao, unidadeMedida, largura, altura, profundidade, peso, cor) VALUES ('".$this->getFabricante()."',  '".$this->getNome()."', '".$this->getMarca()."','".$this->getModelo()."','".$this->getDescricao()."', '".$this->getUnidadeMedida()."', '".$this->getLargura()."', '".$this->getAltura()."', '".$this->getProfundidade()."','".$this->getPeso()."', '".$this->getCor()."')"));
     }
 
 }
