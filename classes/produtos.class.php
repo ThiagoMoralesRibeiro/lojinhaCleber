@@ -17,7 +17,7 @@ class Produtos {
     private $cor;
     
     
-    function function_name($idProduto,$fabricante,$nome,$marca,$modelo, $idCategoria,$descricao,$unidadeMedida,$largura,$altura,$profundidade,$peso,$cor) {
+    function __construct($idProduto,$fabricante,$nome,$marca,$modelo, $idCategoria,$descricao,$unidadeMedida,$largura,$altura,$profundidade,$peso,$cor) {
         $this->setIdProduto($idProduto);
         $this->setFabricante($fabricante);
         $this->setNome($nome);

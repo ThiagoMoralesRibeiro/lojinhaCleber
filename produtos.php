@@ -14,7 +14,7 @@ $peso=$_POST['peso'];
 $color=$_POST['color'];
 
 
-$user = new Usuarios($email, $senha, $nome, $cpf, $endereco, $bairro, $cidade, $uf, $cep, $telefone, $foto);
+$user = new Produtos();
 
 
 
