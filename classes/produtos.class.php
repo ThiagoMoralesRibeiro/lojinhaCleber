@@ -1,5 +1,7 @@
 <?php
 
+include_once 'classes/dataBaseConnection.class.php';
+
 class Produtos {
     
     private $idProduto;
