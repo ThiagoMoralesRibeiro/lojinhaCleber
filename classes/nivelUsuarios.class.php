@@ -1,10 +1,11 @@
 <?php
+include_once 'dataBaseConnection.class.php';
 class NivelUsuarios {
     private $idNivelUsuarios;
     private $nivel;
     
     
-    function __construct( $nivel) {
+    function __construct($nivel) {
         
         $this->setNivel($nivel);
         $this->saveQuery();
