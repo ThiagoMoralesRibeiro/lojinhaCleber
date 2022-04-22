@@ -24,19 +24,6 @@ $("#btn-confirma").on(click, function () {
                 if (response) {
                     //trata a resposta
                     alert("Salvo com sucesso!");
-                    $("#result").html(
-                        "Nome:" +obj.nome + "<br>" +
-                        "Email:"+obj.email + "<br>"+
-                        "Senha:"+obj.senha + "<br>"+
-                        "CPF:"+obj.cpf + "<br>"+
-                        "Endereço:"+obj.adress + "<br>"+
-                        "Bairro:"+obj.bairro + "<br>"+
-                        "Cidade:"+obj.cidade + "<br>"+
-                        "UF:"+obj.uf + "<br>"+
-                        "CEP:"+obj.email + "<br>"+
-                        "Telefone"+obj.telefone+ "<br>"+
-                        "Foto"+obj.foto );
-                    
 
                 }else{
                     alert(response.error);                    

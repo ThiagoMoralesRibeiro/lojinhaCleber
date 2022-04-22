@@ -2,19 +2,19 @@
 
 include_once 'classes/usuarios.class.php';
 
-$nome = $_REQUEST['namePerson'];
-$email =$_REQUEST['email'];
-$senha =$_REQUEST['pwd'];
-$cpf=$_REQUEST['cpf'];
-$endereco=$_REQUEST['adress'];
-$bairro=$_REQUEST['bairro'];
-$cidade=$_REQUEST['cidade'];
-$uf=$_REQUEST['uf'];
-$cep=$_REQUEST['cep'];
-$telefone=$_REQUEST['telefone'];
-$foto=$_REQUEST['foto'];
+$nome = $_POST['namePerson'];
+$email =$_POST['email'];
+$senha =$_POST['pwd'];
+$cpf=$_POST['cpf'];
+$endereco=$_POST['adress'];
+$bairro=$_POST['bairro'];
+$cidade=$_POST['cidade'];
+$uf=$_POST['uf'];
+$cep=$_POST['cep'];
+$telefone=$_POST['telefone'];
+$foto=$_POST['foto'];
 
-//$user = new Usuarios($email, $senha, $nome, $cpf, $endereco, $bairro, $cidade, $uf, $cep, $telefone, $foto);
+$user = new Usuarios($email, $senha, $nome, $cpf, $endereco, $bairro, $cidade, $uf, $cep, $telefone, $foto);
 
 echo json_encode(
     array(
