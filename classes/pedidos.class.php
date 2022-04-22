@@ -1,4 +1,5 @@
 <?php
+include_once 'classes/dataBaseConnection.class.php';
 class Pedidos {
     private $idPedido;
     private $idUsuario;
@@ -25,9 +26,9 @@ class Pedidos {
     private $motivoDevolucao;
     
     
-    function __construct( $idUsuario,$dtPedido,$dtPagamento,$dtNotaFiscal,$notaFiscal,$dtEnvio,$dtRecebimento,$tipoFrete,$rastreioFrete,$entregaEndereco,$entregaNumero,$entregaComp1,$entregaBairro,$entregaCidade,$entregaUF,$entregaCEP,$entregaTelefone,$entregaRefer,$valorTotal,$qtdItens,$dtDevolucao,$motivoDevolucao) {
+    function __construct( $dtPedido,$dtPagamento,$dtNotaFiscal,$notaFiscal,$dtEnvio,$dtRecebimento,$tipoFrete,$rastreioFrete,$entregaEndereco,$entregaNumero,$entregaComp1,$entregaBairro,$entregaCidade,$entregaUF,$entregaCEP,$entregaTelefone,$entregaRefer,$valorTotal,$qtdItens,$dtDevolucao,$motivoDevolucao) {
         
-        $this->setIdUsuario($idUsuario);
+        
         $this->setDtPedido($dtPedido);
         $this->setDtPagamento($dtPagamento);
         $this->setDtNotaFiscal($dtNotaFiscal);
@@ -234,6 +235,11 @@ class Pedidos {
 
     public function setMotivoDevolucao($motivoDevolucao){
         $this->motivoDevolucao = $motivoDevolucao;
+    }
+
+    public function saveQuery() {
+        $insert = new DataBaseConnection();
+        $insert->getConn()->query(("INSERT INTO pedidos (	dtPedido,	dtPagamento,	dtNotaFiscal,	notaFiscal,	dtEnvio,	dtRecebimento,	tipoFreterastreioFrete,	entregaendereco,	entregaNumero,	entregaCompl,	entregaBairro,	entregaCidade,	entregaUF,	entregaCEP,	entregaTelefone,	entregaRefer,	valorTotal,	qtdItems,	dtDevolucao,	motivoDevolucao	) VALUES ('".$this->getDtPedido()."',  '".$this->getDtPagamento()."', '".$this->getDtNotaFiscal()."','".$this->getNotaFiscal()."','".$this->getDtEnvio()."', '".$this->getDtRecebimento()."', '".$this->getTipoFrete()."', '".$this->getRastreioFrete()."', '".$this->getEntregaEndereco()."','".$this->getEntregaNumero()."', '".$this->getEntregaComp1()."','".$this->getEntregaBairro()."','".$this->getEntregaCidade()."','".$this->getEntregaUF()."','".$this->getEntregaCep()."','".$this->getEntregaTelefone()."','".$this->getEntregaRefer()."','".$this->getValorTotal()."','".$this->getQtdItens()."','".$this->getDtDevolucao()."','".$this->getMotivoDevolucao()."')"));
     }
 
 }
