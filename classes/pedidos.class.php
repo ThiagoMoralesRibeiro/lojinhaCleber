@@ -1,5 +1,5 @@
 <?php
-include_once 'classes/dataBaseConnection.class.php';
+include_once 'dataBaseConnection.class.php';
 class Pedidos {
     private $idPedido;
     private $idUsuario;
