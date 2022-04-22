@@ -14,7 +14,7 @@ $cep=$_REQUEST['cep'];
 $telefone=$_REQUEST['telefone'];
 $foto=$_REQUEST['foto'];
 
-$user = new Usuarios($email, $senha, $nome, $cpf, $endereco, $bairro, $cidade, $uf, $cep, $telefone, $foto);
+//$user = new Usuarios($email, $senha, $nome, $cpf, $endereco, $bairro, $cidade, $uf, $cep, $telefone, $foto);
 
 echo json_encode(
     array(
