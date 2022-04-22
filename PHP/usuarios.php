@@ -1,6 +1,6 @@
 <?php
 
-include_once 'classes/usuarios.class.php';
+include_once '../classes/usuarios.class.php';
 
 $nome = $_POST['namePerson'];
 $email =$_POST['email'];
@@ -17,7 +17,7 @@ $foto=$_POST['foto'];
 $user = new Usuarios($email, $senha, $nome, $cpf, $endereco, $bairro, $cidade, $uf, $cep, $telefone, $foto);
 
 $consultaUsuarios =new DataBaseConnection();
-$resultSelect =$consultaUsuarios->getConn()->query("SELECT * FROM usuarios");
+$resultSelect = $consultaUsuarios->getConn()->query("SELECT * FROM usuarios");
 
 while($line = mysqli_fetch_assoc($resultSelect)){
     echo  "<br>". "Nome: ".$line['nome'] . "<br>";
