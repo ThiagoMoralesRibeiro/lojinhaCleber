@@ -11,7 +11,7 @@ class ItensPedido {
     private $motivoDevolucao;
     
     
-    function function_name($ordem,$qtdItem,$dtDevolucao,$motivoDevolucao) {
+    function __construct($ordem,$qtdItem,$dtDevolucao,$motivoDevolucao) {
         
         $this->setOrdem($ordem);
         
