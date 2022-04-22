@@ -45,7 +45,7 @@
 */
 
 
-$("#btn-confirma").ready(function () { 
+$(document).ready(function () { 
          	
   // pegando os dados
         nome = $("#name").val();
