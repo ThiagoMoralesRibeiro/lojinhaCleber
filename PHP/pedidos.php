@@ -13,7 +13,7 @@ $rastreioFrete=$_POST['rastr'];
 $entregaEndereco=$_POST['entregaNumber'];
 $entregaNumero=$_POST['entregaAddress'];
 $entregaComp1=$_POST['entregaComp1'];
-$entregaBairro=$_POST['entregaBairro'];
+$entregaBairro=$_POST['entregabairro'];
 $entregaCidade=$_POST['city'];
 $entregaUF=$_POST['entregaUF'];
 $entregaCEP=$_POST['cep'];
@@ -24,7 +24,7 @@ $qtdItens=$_POST['qtdItens'];
 $dtDevolucao=$_POST['dtDev'];
 $motivoDevolucao=$_POST['motivoDev'];
 
-$products = new Pedidos($dtPedido,$dtPagamento,$dtNotaFiscal,$notaFiscal,$dtEnvio,$dtRecebimento,$tipoFrete,$rastreioFrete,$entregaEndereco,$entregaNumero,$entregaComp1,$entregaBairro,$entregaCidade,$entregaUF,$entregaCEP,$entregaTelefone,$entregaRefer,$valorTotal,$qtdItens,$dtDevolucao,$motivoDevolucao);
+$pedidos = new Pedidos($dtPedido,$dtPagamento,$dtNotaFiscal,$notaFiscal,$dtEnvio,$dtRecebimento,$tipoFrete,$rastreioFrete,$entregaEndereco,$entregaNumero,$entregaComp1,$entregaBairro,$entregaCidade,$entregaUF,$entregaCEP,$entregaTelefone,$entregaRefer,$valorTotal,$qtdItens,$dtDevolucao,$motivoDevolucao);
 
 ?>
 

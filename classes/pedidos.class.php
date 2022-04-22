@@ -51,6 +51,7 @@ class Pedidos {
         $this->setValorTotal($valorTotal);
         $this->setEntregaRefer($entregaRefer);
         $this->setEntregaTelefone($entregaTelefone);
+        $this->saveQuery();
     }
 
     public function getIdPedido(){
