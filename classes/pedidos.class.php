@@ -51,7 +51,7 @@ class Pedidos {
         $this->setValorTotal($valorTotal);
         $this->setEntregaRefer($entregaRefer);
         $this->setEntregaTelefone($entregaTelefone);
-        $this->saveQuery();
+        $this->save();
     }
 
     public function getIdPedido(){
@@ -238,7 +238,7 @@ class Pedidos {
         $this->motivoDevolucao = $motivoDevolucao;
     }
 
-    public function saveQuery() {
+    public function save() {
         $insert = new DataBaseConnection();
         $insert->getConn()->query(("INSERT INTO pedidos (	dtPedido,	dtPagamento,	dtNotaFiscal,	notaFiscal,	dtEnvio,	dtRecebimento,	tipoFrete, rastreioFrete,	entregaendereco,	entregaNumero,	entregaCompl,	entregaBairro,	entregaCidade,	entregaUF,	entregaCEP,	entregaTelefone,	entregaRefer,	valorTotal,	qtdItems,	dtDevolucao,	motivoDevolucao	) VALUES ('".$this->getDtPedido()."',  '".$this->getDtPagamento()."', '".$this->getDtNotaFiscal()."','".$this->getNotaFiscal()."','".$this->getDtEnvio()."', '".$this->getDtRecebimento()."', '".$this->getTipoFrete()."', '".$this->getRastreioFrete()."', '".$this->getEntregaEndereco()."','".$this->getEntregaNumero()."', '".$this->getEntregaComp1()."','".$this->getEntregaBairro()."','".$this->getEntregaCidade()."','".$this->getEntregaUF()."','".$this->getEntregaCep()."','".$this->getEntregaTelefone()."','".$this->getEntregaRefer()."','".$this->getValorTotal()."','".$this->getQtdItens()."','".$this->getDtDevolucao()."','".$this->getMotivoDevolucao()."')"));
     }

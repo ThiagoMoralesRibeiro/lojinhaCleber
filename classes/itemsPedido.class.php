@@ -1,4 +1,6 @@
 <?php
+
+include_once 'dataBaseConnection.class.php';
 class ItensPedido {
     private $idItemPedido;
     private $ordem;
@@ -9,14 +11,15 @@ class ItensPedido {
     private $motivoDevolucao;
     
     
-    function function_name($idItemPedido,$ordem,$idPedido,$idEstoque,$qtdItem,$dtDevolucao,$motivoDevolucao) {
-        $this->setIdItemPedido($idItemPedido);
+    function function_name($ordem,$qtdItem,$dtDevolucao,$motivoDevolucao) {
+        
         $this->setOrdem($ordem);
-        $this->setIdPedido($idPedido);
-        $this->setIdEstoque($idEstoque);
+        
+        
         $this->setQtdItem($qtdItem);
         $this->setDtDevolucao($dtDevolucao);
         $this->setMotivoDevolucao($motivoDevolucao);
+        $this->salvar();
     }
 
     public function getIdItemPedido(){
@@ -73,6 +76,11 @@ class ItensPedido {
 
     public function setMotivoDevolucao($motivoDevolucao){
         $this->motivoDevolucao = $motivoDevolucao;
+    }
+
+    public function salvar() {
+        $insert = new DataBaseConnection();
+        $insert->getConn()->query(("INSERT INTO itemspedido (	ordem,		qtdItem,	dtDevolucao,	motivoDevolucao	) VALUES ('".$this->getOrdem()."',  '".$this->getQtdItem()."', '".$this->getDtDevolucao()."','".$this->getMotivoDevolucao()."')"));
     }
 
 }
