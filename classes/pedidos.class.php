@@ -25,8 +25,8 @@ class Pedidos {
     private $motivoDevolucao;
     
     
-    function __construct($idPedido, $idUsuario,$dtPedido,$dtPagamento,$dtNotaFiscal,$notaFiscal,$dtEnvio,$dtRecebimento,$tipoFrete,$rastreioFrete,$entregaEndereco,$entregaNumero,$entregaComp1,$entregaBairro,$entregaCidade,$entregaUF,$entregaCEP,$entregaTelefone,$entregaRefer,$valorTotal,$qtdItens,$dtDevolucao,$motivoDevolucao) {
-        $this->setIdPedido($idPedido);
+    function __construct( $idUsuario,$dtPedido,$dtPagamento,$dtNotaFiscal,$notaFiscal,$dtEnvio,$dtRecebimento,$tipoFrete,$rastreioFrete,$entregaEndereco,$entregaNumero,$entregaComp1,$entregaBairro,$entregaCidade,$entregaUF,$entregaCEP,$entregaTelefone,$entregaRefer,$valorTotal,$qtdItens,$dtDevolucao,$motivoDevolucao) {
+        
         $this->setIdUsuario($idUsuario);
         $this->setDtPedido($dtPedido);
         $this->setDtPagamento($dtPagamento);
