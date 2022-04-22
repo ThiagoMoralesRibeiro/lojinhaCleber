@@ -3,7 +3,7 @@
 include_once 'classes/produtos.class.php';
 
 $fabricante = $_POST['fabr'];
-$name =$_POST['name'];
+$nome =$_POST['name'];
 $modelo =$_POST['modelo'];
 $marca =$_POST['marca'];
 $descricao=$_POST['descricao'];
@@ -15,6 +15,6 @@ $peso=$_POST['peso'];
 $cor=$_POST['color'];
 
 
-$products = new Produtos($fabricante,$name,$modelo, $marca, $descricao, $uni, $largura, $altura, $prof, $peso,$cor)
+$products = new Produtos($fabricante, $nome ,$modelo, $marca, $descricao, $uni, $largura, $altura, $prof, $peso,$cor)
 
 ?>
