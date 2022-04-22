@@ -1,5 +1,5 @@
 <?php
-
+include_once 'dataBaseConnection.class.php';
 
 class Usuarios {
     private $idUsuario;
