@@ -1,12 +1,13 @@
 <?php
-class nivelUsuarios {
+class NivelUsuarios {
     private $idNivelUsuarios;
     private $nivel;
     
     
-    function __construct($idNivelUsuarios, $nivel) {
-        $this->setIdNivelUsuarios($idNivelUsuarios);
+    function __construct( $nivel) {
+        
         $this->setNivel($nivel);
+        $this->saveQuery();
     }
 
     public function getIdNivelUsuarios(){
@@ -25,6 +26,10 @@ class nivelUsuarios {
         $this->nivel = $nivel;
     }
 
+    public function saveQuery() {
+        $insert = new DataBaseConnection();
+        $insert->getConn()->query(("INSERT INTO produtos (nivel) VALUES ('".$this->getNivel()."' )"));
+    }
     
 
 }
