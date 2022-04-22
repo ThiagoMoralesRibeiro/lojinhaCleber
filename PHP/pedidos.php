@@ -1,6 +1,6 @@
 <?php
 
-require_once '../classes/pedidos.class.php';
+include_once '../classes/pedidos.class.php';
 
 $dtPedido =$_POST['dtpedido'];
 $dtPagamento=$_POST['dtpagl'];
