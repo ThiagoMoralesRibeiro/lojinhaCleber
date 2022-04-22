@@ -25,5 +25,7 @@ class nivelUsuarios {
         $this->nivel = $nivel;
     }
 
+    
+
 }
 ?>
