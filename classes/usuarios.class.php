@@ -153,6 +153,9 @@ class Usuarios {
         $insert->getConn()->query(("INSERT INTO usuarios (email, senha, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, foto) VALUES ('".$this->getEmail()."',  '".$this->getSenha()."', '".$this->getNome()."','".$this->getCpf()."','".$this->getEndereco()."', '".$this->getBairro()."', '".$this->getCidade()."', '".$this->getUf()."', '".$this->getCep()."','".$this->getTelefone()."', '".$this->getFoto()."')"));
     }
 
+   
+    
+
 }
 
 ?>
