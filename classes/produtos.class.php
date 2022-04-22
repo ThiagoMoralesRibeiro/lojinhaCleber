@@ -17,13 +17,13 @@ class Produtos {
     private $cor;
     
     
-    function __construct($idProduto,$fabricante,$nome,$marca,$modelo, $idCategoria,$descricao,$unidadeMedida,$largura,$altura,$profundidade,$peso,$cor) {
-        $this->setIdProduto($idProduto);
+    public function __construct ($fabricante,$nome,$marca,$modelo, $descricao,$unidadeMedida,$largura,$altura,$profundidade,$peso,$cor) {
+        
         $this->setFabricante($fabricante);
         $this->setNome($nome);
         $this->setMarca($marca);
         $this->setModelo($modelo);
-        $this->setIdCategoria($idCategoria);
+        
         $this->setDescricao($descricao);
         $this->setUnidadeMedida($unidadeMedida);
         $this->setLargura($largura);
