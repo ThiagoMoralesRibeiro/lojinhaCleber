@@ -1,6 +1,6 @@
 <?php
 
-include './classes/pedidos.class.php';
+include 'pedidos.class.php';
 
 $dtPedido =$_POST['dtpedido'];
 $dtPagamento=$_POST['dtpagl'];
