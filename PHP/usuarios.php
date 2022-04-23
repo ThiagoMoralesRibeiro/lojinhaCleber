@@ -20,15 +20,41 @@ $consultaUsuarios =new DataBaseConnection();
 $resultSelect = $consultaUsuarios->getConn()->query("SELECT * FROM usuarios");
 
 while($line = mysqli_fetch_assoc($resultSelect)){
-    echo  "<br>". "Nome: ".$line['nome'] . "<br>";
-    echo   "Email: ".$line['email'] . "<br>";
-    echo  "CPF: ".$line['cpf'] . "<br>";
-    echo  "Endereço: ".$line['endereco'] . "<br>";
-    echo  "Bairro: ".$line['bairro'] . "<br>";
-    echo  "Cidade: ".$line['cidade'] . "<br>";
-    echo  "UF: ".$line['uf'] . "<br>";
-    echo  "Telefone: ".$line['telefone'] . "<br>";
+    $nameUser =  $line['nome'] ;
+    $emailUser =   $line['email'] ;
+    $cpfUser = $line['cpf'] ;
+    $adressUser =$line['endereco'] ;
+    $bairroUser= $line['bairro'] ;
+    $cityUser= $line['cidade'] ;
+    $ufUser= $line['uf'] ;
+    $telUser= $line['telefone'] ;
 }
+?>
+<table  border="1px" cellpadding="5px" cellspacing="0">
+                <tr>
+                    
+                    <td>Nome</td>
+                    <td>Email</td>
+                    <td>CPF</td>
+                    <td>Endereço</td>
+                    <td>Bairro</td>
+                    <td>Cidade</td>
+                    <td>UF</td>
+                    <td>Telefone</td>
+                </tr>
+<?php               
+            echo"<tr>
+                <td>$nameUser</td>
+                <td>$emailUser</td>
+                <td>$cpfUser</td>
+                <td>$adressUser</td>
+                <td>$bairroUser</td>
+                <td>$cityUser</td>
+                <td>$ufUser</td>
+                <td>$telUser</td>
+            </tr>";
+                
+
 /*echo json_encode(
     array(
         "email" => $email,
