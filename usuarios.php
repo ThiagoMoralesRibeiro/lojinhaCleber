@@ -14,12 +14,61 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     
     <!-- Latest compiled JavaScript -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- Lastest compled AJAX-->
+	
+	<!-- Lastest compiled AJAX-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         
 </head>
 <body>
+
+
+	<table border="2px" cellpadding="7px" cellspacing="2">
+					<tr>
+						<td>Nome</td>
+						<td>Email</td>
+						<td>CPF</td>
+						<td>Endereço</td>
+						<td>Bairro</td>
+						<td>Cidade</td>
+						<td>UF</td>
+						<td>Telefone</td>
+					</tr>
+	<?php    
+			include_once './classes/dataBaseConnection.class.php';
+	
+			$consultaUsuarios =new DataBaseConnection();
+			$resultSelect = $consultaUsuarios->getConn()->query("SELECT * FROM usuarios");
+
+			while($line = mysqli_fetch_assoc($resultSelect)){
+				$nameUser =  $line['nome'] ;
+				$emailUser =   $line['email'] ;
+				$cpfUser = $line['cpf'] ;
+				$adressUser =$line['endereco'] ;
+				$bairroUser= $line['bairro'] ;
+				$cityUser= $line['cidade'] ;
+				$ufUser= $line['uf'] ;
+				$telUser= $line['telefone'] ;
+			}
+
+
+			echo
+				"<tr>
+					<td>$nameUser</td>
+					<td>$emailUser</td>
+					<td>$cpfUser</td>
+					<td>$adressUser</td>
+					<td>$bairroUser</td>
+					<td>$cityUser</td>
+					<td>$ufUser</td>
+					<td>$telUser</td>
+				</tr>";
+
+
+	?>
+
+	</table>
 
 	<div class="container m-5 p-5">
   		<h2>Insert form</h2>
@@ -89,9 +138,32 @@
   		</form>
 	</div>
 
-	<div id="result"></div>
 	
-	<script type="text/javascript" src="JS/usuario.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+    
+			$('#btn-confirma').click(function() {
+        		info = $('#userCad').serialize();
+        		console.log(info);
+
+				$.ajax({
+					type: 'POST',
+					dataType: 'json',
+					url: 'saveUser.php',
+					async: true,
+					data: info,
+					success: function(response) {
+						location.reload();
+					}
+				});
+
+				return false;
+			});
+
+		});
+
+	</script>
 
 </body>
 </html>
