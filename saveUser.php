@@ -1,6 +1,7 @@
 <?php
 
-include_once '../classes/usuarios.class.php';
+include_once './classes/usuarios.class.php';
+
 
 $nome = $_POST['namePerson'];
 $email =$_POST['email'];
