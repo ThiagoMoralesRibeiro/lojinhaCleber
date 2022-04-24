@@ -8,11 +8,11 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             dataType: 'json',
-            url: 'PHP/usuarios.php',
+            url: '../PHP/usuarios.php',
             async: true,
             data: info,
             success: function(response) {
-                location.reload();
+            location.reload();
             }
         });
 
