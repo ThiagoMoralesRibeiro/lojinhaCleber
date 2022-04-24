@@ -38,7 +38,7 @@
 	<?php    
 			include_once './classes/dataBaseConnection.class.php';
 	
-			$consultaUsuarios =new DataBaseConnection();
+			$consultaUsuarios = new DataBaseConnection();
 			$resultSelect = $consultaUsuarios->getConn()->query("SELECT * FROM usuarios");
 
 			while($line = mysqli_fetch_assoc($resultSelect)){
@@ -51,8 +51,6 @@
 				$ufUser= $line['uf'] ;
 				$telUser= $line['telefone'] ;
 			}
-
-
 			echo
 				"<tr>
 					<td>$nameUser</td>

@@ -18,7 +18,7 @@ class Usuarios {
     private $ativo;
     
     
-    function __construct(  $email, $senha, $nome,$cpf, $endereco,$bairro,$cidade,$uf,$cep,$telefone,$foto) {
+    function __construct( $email, $senha, $nome,$cpf, $endereco,$bairro,$cidade,$uf,$cep,$telefone,$foto) {
     
         $this->setEmail($email);
         $this->setSenha($senha);
