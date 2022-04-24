@@ -30,7 +30,7 @@ while($line = mysqli_fetch_assoc($resultSelect)){
     $telUser= $line['telefone'] ;
 }
 ?>
-<table  border="1px" cellpadding="5px" cellspacing="0">
+<table  border="2px" cellpadding="7px" cellspacing="2">
                 <tr>
                     
                     <td>Nome</td>
