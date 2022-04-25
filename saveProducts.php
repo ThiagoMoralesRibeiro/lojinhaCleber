@@ -1,6 +1,6 @@
 <?php
 
-include_once '../classes/produtos.class.php';
+include_once './classes/produtos.class.php';
 
 $fabricante = $_POST['fabr'];
 $nome =$_POST['name'];
