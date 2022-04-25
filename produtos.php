@@ -27,8 +27,8 @@
 						<td>Fabricante</td>
 						<td>Nome</td>
 						<td>Marca</td>
-						<td>Descrição</td>
 						<td>Modelo</td>
+						<td>Descrição</td>
 						<td>Unidade de Medida</td>
 						<td>Largura</td>
 						<td>Altura</td>
@@ -92,16 +92,17 @@
       			<label for="marca">Marca:</label>
       			<input type="text" class="form-control" id="marca" placeholder="Enter brand" name="marca">
     		</div>
+
+			<div class="form-group">
+				<label for="marca">Modelo:</label>
+				<input type="text" class="form-control" id="modelo" placeholder="Enter model" name="modelo">
+		  	</div>
     		
     		<div class="form-group">
     			<label for="pwd">Descrição:</label>
     			<textarea rows="5" cols="5" class="form-control" id="descricao" name="descricao" class="form-control" placeholder="Enter descricao"></textarea>
   			</div>
 
-			<div class="form-group">
-				<label for="marca">Modelo:</label>
-				<input type="text" class="form-control" id="modelo" placeholder="Enter model" name="modelo">
-		  </div>
     		
     		<div class="form-group">
       			<label for="uni">Unidade de Medida:</label>
@@ -110,22 +111,22 @@
     		
     		<div class="form-group">
       			<label for="large">Largura:</label>
-      			<input type="number" class="form-control" id="largura" name="largura">
+      			<input type="text" class="form-control" id="largura" name="largura">
     		</div>
     		
     		<div class="form-group">
       			<label for="altura">Altura:</label>
-      			<input type="number" class="form-control" id="altura" name="altura">
+      			<input type="text" class="form-control" id="altura" name="altura">
     		</div>
     		
     		<div class="form-group">
       			<label for="prof">Profundidade:</label>
-      			<input type="number" class="form-control" id="profundidade" name="prof">
+      			<input type="text" class="form-control" id="profundidade" name="prof">
     		</div>
     		
     		<div class="form-group">
       			<label for="peso">Peso:</label>
-      			<input type="number" class="form-control" id="peso" name="peso">
+      			<input type="text" class="form-control" id="peso" name="peso">
     		</div>
     		
     		<div class="form-group">

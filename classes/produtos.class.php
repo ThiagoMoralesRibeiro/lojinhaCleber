@@ -25,7 +25,6 @@ class Produtos {
         $this->setNome($nome);
         $this->setMarca($marca);
         $this->setModelo($modelo);
-        
         $this->setDescricao($descricao);
         $this->setUnidadeMedida($unidadeMedida);
         $this->setLargura($largura);
