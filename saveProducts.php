@@ -15,6 +15,10 @@ $peso=$_POST['peso'];
 $cor=$_POST['color'];
 
 
-$products = new Produtos($fabricante, $nome ,$modelo, $marca, $descricao, $uni, $largura, $altura, $prof, $peso,$cor)
+$products = new Produtos($fabricante, $nome ,$modelo, $marca, $descricao, $uni, $largura, $altura, $prof, $peso,$cor);
+
+$response = array('success'=>true);
+echo json_encode($response);
+
 
 ?>
