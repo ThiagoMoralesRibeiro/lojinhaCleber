@@ -53,7 +53,7 @@
   		<form action="" method="post" id="nivelUserCad">
   			<div class="form-group">
       			<label for="userLevel">Nível do Usuário:</label>
-      			<input type="number" class="form-control" id="userLevel" placeholder="Enter nivel usuario" name="userLevel">
+      			<input type="text" class="form-control" id="userLevel" placeholder="Enter nivel usuario" name="userLevel">
     		</div>
     	
     		<div class="form-group form-check">
