@@ -1,6 +1,6 @@
 <?php
 
-include_once '../classes/pedidos.class.php';
+include_once './classes/pedidos.class.php';
 
 $dtPedido =$_POST['dtpedido'];
 $dtPagamento=$_POST['dtpagl'];
@@ -25,6 +25,8 @@ $dtDevolucao=$_POST['dtDev'];
 $motivoDevolucao=$_POST['motivoDev'];
 
 $pedidos = new Pedidos($dtPedido,$dtPagamento,$dtNotaFiscal,$notaFiscal,$dtEnvio,$dtRecebimento,$tipoFrete,$rastreioFrete,$entregaEndereco,$entregaNumero,$entregaComp1,$entregaBairro,$entregaCidade,$entregaUF,$entregaCEP,$entregaTelefone,$entregaRefer,$valorTotal,$qtdItens,$dtDevolucao,$motivoDevolucao);
+$response = array('success'=>true);
+echo json_encode($response);
 
 ?>
 

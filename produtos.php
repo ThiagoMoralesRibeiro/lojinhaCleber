@@ -48,6 +48,7 @@
 				$brandProd =   $line['marca'] ;
 				$modeloProd = $line['modelo'] ;
 				$descr =$line['descricao'] ;
+				$uni =$line['unidadeMedida'];
 				$large= $line['largura'] ;
 				$height= $line['altura'] ;
 				$prof= $line['profundidade'] ;
@@ -61,6 +62,7 @@
 					<td>$brandProd </td>
 					<td>$modeloProd </td>
 					<td>$descr </td>
+					<td>$uni </td>
 					<td>$large </td>
 					<td>$height </td>
 					<td>$prof </td>
@@ -103,7 +105,6 @@
     			<textarea rows="5" cols="5" class="form-control" id="descricao" name="descricao" class="form-control" placeholder="Enter descricao"></textarea>
   			</div>
 
-    		
     		<div class="form-group">
       			<label for="uni">Unidade de Medida:</label>
       			<input type="text" class="form-control" id="uni" placeholder="Enter your Unidade de Medida" name="uni">
@@ -111,22 +112,22 @@
     		
     		<div class="form-group">
       			<label for="large">Largura:</label>
-      			<input type="text" class="form-control" id="largura" name="largura">
+      			<input type="number" class="form-control" id="largura" name="largura">
     		</div>
     		
     		<div class="form-group">
       			<label for="altura">Altura:</label>
-      			<input type="text" class="form-control" id="altura" name="altura">
+      			<input type="number" class="form-control" id="altura" name="altura">
     		</div>
     		
     		<div class="form-group">
       			<label for="prof">Profundidade:</label>
-      			<input type="text" class="form-control" id="profundidade" name="prof">
+      			<input type="number" class="form-control" id="profundidade" name="prof">
     		</div>
     		
     		<div class="form-group">
       			<label for="peso">Peso:</label>
-      			<input type="text" class="form-control" id="peso" name="peso">
+      			<input type="number" class="form-control" id="peso" name="peso">
     		</div>
     		
     		<div class="form-group">

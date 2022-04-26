@@ -1,0 +1,21 @@
+                            $dataPedido
+							$dataPagamento
+							$dataNota
+							$notaFiscal
+							$dataRecebimento
+							$tipoFrete
+							$rastreio
+							$endereçoEntrega
+							$númeroEndereço
+							$complementoEndereço
+							$bairroEndereço
+							$cidade
+							$uf
+							$cep
+							$tel
+							$ref
+							$valorTotal
+							$quantItens
+							$dataDevolução
+							$motivoDevolução
+						

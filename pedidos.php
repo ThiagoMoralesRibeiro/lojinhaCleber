@@ -15,13 +15,99 @@
     
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Lastest compiled AJAX-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         
 </head>
 <body>
+	<table border="2px" cellpadding="7px" cellspacing="2">
+						<tr>
+							<td>Data do pedido</td>
+							<td>Data do pagamento</td>
+							<td>Data da Nota fiscal</td>
+							<td>Nota fiscal</td>
+							<td>Data do recebimento</td>
+							<td>Tipo de frete</td>
+							<td>Rastreio</td>
+							<td>Endereço de entrega</td>
+							<td>Número do Endereço</td>
+							<td>Complemento do Endereço</td>
+							<td>Bairro do Endereço</td>
+							<td>Cidade</td>
+							<td>UF</td>
+							<td>CEP</td>
+							<td>Telefone</td>
+							<td>Referência</td>
+							<td>Valor total</td>
+							<td>Quantidade de itens</td>
+							<td>Data da devolução</td>
+							<td>Motivo da devolução</td>
+						</tr>
+		<?php    
+				include_once './classes/dataBaseConnection.class.php';
+		
+				$consultaProdutos = new DataBaseConnection();
+				$resultSelect = $consultaProdutos->getConn()->query("SELECT * FROM pedidos");
+
+				while($line = mysqli_fetch_assoc($resultSelect)){
+					$dataPedido= $line['dtPedido'];
+					$dataPagamento= $line['dtPagamento'];
+					$dataNota= $line['dtNotaFiscal'];
+					$notaFiscal= $line['notaFiscal'];
+					$dataRecebimento= $line['dtRecebimento'];
+					$tipoFrete= $line['tipoFrete'];
+					$rastreio= $line['rastreioFrete'];
+					$endereçoEntrega= $line['entregaendereco'];
+					$númeroEndereço= $line['entregaNumero'];
+					$complementoEndereço= $line['entregaCompl'];
+					$bairroEndereço= $line['entregaBairro'];
+					$cidade= $line['entregaCidade'];
+					$uf= $line['entregaUF'];
+					$cep= $line['entregaCEP'];
+					$tel= $line['entregaTelefone'];
+					$ref= $line['entregaRefer'];
+					$valorTotal= $line['valorTotal'];
+					$quantItens= $line['qtdItems'];
+					$dataDevolução= $line['dtDevolucao'];
+					$motivoDevolução= $line['motivoDevolucao'];
+				
+				}
+				echo
+					"<tr>
+					<td>$dataPedido</td>
+					<td>$dataPagamento</td>
+					<td>$dataNota</td>
+					<td>$notaFiscal</td>
+					<td>$dataRecebimento</td>
+					<td>$tipoFrete</td>
+					<td>$rastreio</td>
+					<td>$endereçoEntrega</td>
+					<td>$númeroEndereço</td>
+					<td>$complementoEndereço</td>
+					<td>$bairroEndereço</td>
+					<td>$cidade</td>
+					<td>$uf</td>
+					<td>$cep</td>
+					<td>$tel</td>
+					<td>$ref</td>
+					<td>$valorTotal</td>
+					<td>$quantItens</td>
+					<td>$dataDevolução</td>
+					<td>$motivoDevolução</td>
+				
+					</tr>";
+
+					
+
+		?>
+
+	</table>
+		
 
 	<div class="container m-5 p-5">
   		<h2>Insert form</h2>
-  		<form action="PHP/pedidos.php" method="post">
+  		<form action="" method="post" id="cadPedido">
   			<div class="form-group">
       			<label for="dtpedido">Data do Pedido:</label>
       			<input type="date" class="form-control" id="dtpedido" placeholder="Enter your dtpedido" name="dtpedido">
@@ -131,9 +217,34 @@
         		</label>
      	 	
     		</div>
-    		<button type="submit" class="btn btn-dark">Submit</button>
+    		<button type="submit" class="btn btn-dark" id="btn-confirma">Submit</button>
   		</form>
 	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+    
+			$('#btn-confirma').click(function() {
+        		info = $('#cadPedido').serialize();
+        		console.log(info);
+
+				$.ajax({
+					type: 'POST',
+					dataType: 'json',
+					url: 'savePedidos.php',
+					async: true,
+					data: info,
+					success: function(response) {
+						location.reload();
+					}
+				});
+
+				return false;
+			});
+
+		});
+
+	</script>
 
 </body>
 </html>
