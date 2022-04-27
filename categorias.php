@@ -15,13 +15,48 @@
     
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+	
+	<!-- Lastest compiled AJAX-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
         
 </head>
 <body>
 
+	<table border="2px" cellpadding="7px" cellspacing="2">
+		<tr>
+			<td>Descrição</td>
+			
+			
+			
+		</tr>
+		<?php    
+		include_once './classes/dataBaseConnection.class.php';
+
+		$consultaProdutos = new DataBaseConnection();
+		$resultSelect = $consultaProdutos->getConn()->query("SELECT * FROM categorias");
+
+		while($line = mysqli_fetch_assoc($resultSelect)){
+					$describe= $line['descricao'];
+					
+
+		}
+		echo
+			"<tr>
+				<td>$describe</td>
+
+			</tr>";
+
+			
+
+		?>
+	</table>
+
+
 	<div class="container m-5 p-5">
   		<h2>Insert form</h2>
-  		<form action="PHP/categoria.php" method="post">
+  		<form action="" method="post" id="cadCategoria">
   			<div class="form-group">
       			<label for="desc">Descrição</label>
       			<input type="text" class="form-control" id="descricao"  name="descricao">
@@ -33,9 +68,34 @@
         		</label>
      	 	
     		</div>
-    		<button type="submit" class="btn btn-dark">Submit</button>
+    		<button type="submit" class="btn btn-dark" id="btn-confirma">Submit</button>
   		</form>
 	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+    
+			$('#btn-confirma').click(function() {
+        		info = $('#cadCategoria').serialize();
+        		alert(info);
+
+				$.ajax({
+					type: 'POST',
+					dataType: 'json',
+					url: 'saveCategoria.php',
+					async: true,
+					data: info,
+					success: function(response) {
+						location.reload();
+					}
+				});
+
+				return false;
+			});
+
+		});
+
+	</script>
 
 </body>
 </html>
