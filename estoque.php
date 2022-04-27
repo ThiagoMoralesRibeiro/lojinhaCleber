@@ -155,7 +155,7 @@
     
 			$('#btn-confirma').click(function() {
         		info = $('#cadEstoque').serialize();
-        		alert(info);
+        		
 
 				$.ajax({
 					type: 'POST',

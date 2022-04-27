@@ -4,7 +4,7 @@ class Categoria {
     private $idcategoria="";
     private $descricao="";
     
-    function __construct( $descricao) {
+    function __construct($descricao) {
         
         $this->setDescricao($descricao);
         $this->save();

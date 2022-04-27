@@ -77,7 +77,7 @@
     
 			$('#btn-confirma').click(function() {
         		info = $('#cadCategoria').serialize();
-        		alert(info);
+        		
 
 				$.ajax({
 					type: 'POST',
