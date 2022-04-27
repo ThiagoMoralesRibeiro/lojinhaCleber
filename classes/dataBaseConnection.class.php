@@ -18,7 +18,7 @@ class DataBaseConnection {
        
         
         if (!$this->getConn()) {
-            echo "Ocorreu um erro e o Número do erro é ". mysqli_connect_errno(). mysqli_connect_error();
+            echo "Ocorreu um erro e o NÃºmero do erro : ". mysqli_connect_errno(). mysqli_connect_error();
             exit();
         }
         
