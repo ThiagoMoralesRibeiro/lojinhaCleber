@@ -15,13 +15,74 @@
     
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Lastest compiled AJAX-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         
 </head>
 <body>
+	<table border="2px" cellpadding="7px" cellspacing="2">
+		<tr>
+			<td>Nome</td>
+			<td>Quantidade</td>
+			<td>Data de Fabricação</td>
+			<td>Data de vencimento</td>
+			<td>NF-Compra</td>
+			<td>Preço da Compra</td>
+			<td>ICMS</td>
+			<td>Preço de Venda</td>
+			<td>Quantidade Vendida</td>
+			<td>Quantidade de Ocorrência</td>
+			<td>Ocorrência</td>
+			
+			
+		</tr>
+		<?php    
+		include_once './classes/dataBaseConnection.class.php';
+
+		$consultaProdutos = new DataBaseConnection();
+		$resultSelect = $consultaProdutos->getConn()->query("SELECT * FROM estoque");
+
+		while($line = mysqli_fetch_assoc($resultSelect)){
+					$dtEntrada= $line['dtEntrada'];
+					$quantidade = $line['quantidade'];
+					$dtFabricacao = $line['dtFabricacao'];
+					$dtVencimento = $line['dtVencimento'];
+					$nfCompra= $line['nfCompra'];
+					$precoCompra= $line['precoCompra'];
+					$icms= $line['icmsCompra'];
+					$precoVenda= $line['precoVenda'];
+					$qtdVendida= $line['qtdVendida'];
+					$qtdOcorrencia= $line['qtdOcorrencia'];
+					$ocorrencia= $line['ocorrencia'];
+
+		}
+		echo
+			"<tr>
+				<td>$dtEntrada</td>
+				<td>$quantidade </td>
+				<td>$dtFabricacao </td>
+				<td>$dtVencimento </td>
+				<td>$nfCompra</td>
+				<td>$precoCompra</td>
+				<td>$icms</td>
+				<td>$precoVenda</td>
+				<td>$qtdVendida</td>
+				<td>$qtdOcorrencia</td>
+				<td>$ocorrencia</td>
+
+			</tr>";
+
+			
+
+		?>
+
+
+
 
 	<div class="container m-5 p-5">
   		<h2>Insert form</h2>
-  		<form action="PHP/estoque.php" method="post">
+  		<form action="" id="cadEstoque" method="post">
   			<div class="form-group">
       			<label for="dataEntrada">Data de Entrada</label>
       			<input type="date" class="form-control" id="dtEntrada"  name="dtEntrada">
@@ -84,9 +145,33 @@
         		</label>
      	 	
     		</div>
-    		<button type="submit" class="btn btn-dark">Submit</button>
+    		<button type="submit" class="btn btn-dark" id="btn-confirma">Submit</button>
   		</form>
 	</div>
 
+	<script type="text/javascript">
+		$(document).ready(function() {
+    
+			$('#btn-confirma').click(function() {
+        		info = $('#cadEstoque').serialize();
+        		console.log(info);
+
+				$.ajax({
+					type: 'POST',
+					dataType: 'json',
+					url: 'saveInstitucional.php',
+					async: true,
+					data: info,
+					success: function(response) {
+						location.reload();
+					}
+				});
+
+				return false;
+			});
+
+		});
+
+	</script>
 </body>
 </html>

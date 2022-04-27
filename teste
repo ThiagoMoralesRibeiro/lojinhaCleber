@@ -1,13 +1,11 @@
-                            $nome
-							$cpf_cnpj
-							$tipoPessoa
-							$endereco
-							$bairro
-							$cidade
-							$uf
-							$cep
-							$telefone
-							$email
-							$logo
-							
-						
+            $dtEntrada
+			$quantidade 
+			$dtFabricacao 
+			$dtVencimento 
+			$nfCompra
+			$precoCompra
+			$icms
+			$precoVenda
+			$qtdVendida
+			$qtdOcorrencia
+			$ocorrencia

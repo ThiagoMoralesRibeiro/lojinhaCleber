@@ -14,5 +14,6 @@
     $ocorrencia=$_POST['Ocor']; 
 
     $estoque = new Estoque($dtEntrada, $quantidade, $dtFabricacao, $dtVencimento, $nfCompra, $precoCompra, $icmsCompra, $precoVenda, $qtdVendida, $qtdOcorrencia, $ocorrencia);
-
+    $response = array('success'=>true);
+    echo json_encode($response);
 ?>
