@@ -1,5 +1,5 @@
 <?php
-    include_once '../classes/estoque.class.php';
+    include_once './classes/estoque.class.php';
 
     $dtEntrada =$_POST['dtEntrada']; 
     $quantidade =$_POST['qtd']; 

@@ -23,7 +23,7 @@
 <body>
 	<table border="2px" cellpadding="7px" cellspacing="2">
 		<tr>
-			<td>Nome</td>
+			<td>Data de Entrada</td>
 			<td>Quantidade</td>
 			<td>Data de Fabricação</td>
 			<td>Data de vencimento</td>
@@ -76,6 +76,7 @@
 			
 
 		?>
+	</table>
 
 
 
@@ -154,12 +155,12 @@
     
 			$('#btn-confirma').click(function() {
         		info = $('#cadEstoque').serialize();
-        		console.log(info);
+        		alert(info);
 
 				$.ajax({
 					type: 'POST',
 					dataType: 'json',
-					url: 'saveInstitucional.php',
+					url: 'saveEstoque.php',
 					async: true,
 					data: info,
 					success: function(response) {

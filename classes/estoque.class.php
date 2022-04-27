@@ -137,7 +137,7 @@ class Estoque {
 
     public function saveQuery() {
         $insert = new DataBaseConnection();
-        $insert->getConn()->query(("INSERT INTO estoque (dEstoque,	dtEntradaquantidade,	dtFabricacaodtVencimento,	nfCompra,	precoCompra,	icmsCompra,	precoVenda,	qtdVendida,	qtdOcorrencia,	ocorrencia	) VALUES ('".$this->getDtEntrada()."',  '".$this->getQuantidade()."', '".$this->getDtFabricacao()."','".$this->getDtVencimento()."','".$this->getNfCompra()."', '".$this->getPrecocompra()."', '".$this->getIcmsCompra()."', '".$this->getPrecoVenda()."', '".$this->getQtdVendida()."','".$this->getQtdOcorrencia()."', '".$this->getOcorrencia()."')"));
+        $insert->getConn()->query(("INSERT INTO estoque (dtEntrada, quantidade,	dtFabricacao,dtVencimento,	nfCompra,	precoCompra,	icmsCompra,	precoVenda,	qtdVendida,	qtdOcorrencia,	ocorrencia	) VALUES ('".$this->getDtEntrada()."',  '".$this->getQuantidade()."', '".$this->getDtFabricacao()."','".$this->getDtVencimento()."','".$this->getNfCompra()."', '".$this->getPrecocompra()."', '".$this->getIcmsCompra()."', '".$this->getPrecoVenda()."', '".$this->getQtdVendida()."','".$this->getQtdOcorrencia()."', '".$this->getOcorrencia()."')"));
     }
 
 }
