@@ -1,21 +1,13 @@
-                            $dataPedido
-							$dataPagamento
-							$dataNota
-							$notaFiscal
-							$dataRecebimento
-							$tipoFrete
-							$rastreio
-							$endereçoEntrega
-							$númeroEndereço
-							$complementoEndereço
-							$bairroEndereço
+                            $nome
+							$cpf_cnpj
+							$tipoPessoa
+							$endereco
+							$bairro
 							$cidade
 							$uf
 							$cep
-							$tel
-							$ref
-							$valorTotal
-							$quantItens
-							$dataDevolução
-							$motivoDevolução
+							$telefone
+							$email
+							$logo
+							
 						

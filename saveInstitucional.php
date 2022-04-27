@@ -1,5 +1,5 @@
 <?php
-    include_once '../classes/institucional.class.php';
+    include_once './classes/institucional.class.php';
 
     $nome =$_POST['namePerson'];
     $cpf_cnpj=$_POST['cpf'];
@@ -14,5 +14,6 @@
     $logo=$_POST['logo'];
 
     $itemsPedido = new Institucional($nome,$cpf_cnpj,$tipoPessoa,$endereco,$bairro,$cidade,$uf,$cep, $telefone,$email,$logo);
-
+    $response = array('success'=>true);
+    echo json_encode($response);
 ?>
